@@ -59,14 +59,14 @@ GROUP BY c.customer_id
 
 
 /*
-Obtener una lista de los .
-Obtener una lista de las películas que han sido alquiladas más de 5 veces en un solo día.
-Obtener una lista de los clientes que alquilaron una película en el mismo día en que se registraron como clientes.
-Obtener una lista de las películas que nunca han sido alquiladas en un mes determinado.
-Obtener una lista de los clientes que alquilaron al menos 10 películas en un mes determinado.
-Obtener una lista de las películas que han sido alquiladas por el mismo cliente más de una vez en un día determinado.
-Obtener una lista de los actores que aparecen en las películas más populares (es decir, las que se alquilaron más veces).
-Obtener una lista de las categorías de películas que han sido alquiladas más veces en un mes determinado.
-Obtener una lista de los clientes que han alquilado todas las películas de un actor determinado.
-Obtener una lista de los clientes que alquilaron una película en su fecha de cumpleaños.
-Obtener una lista de las películas que nunca han sido alquiladas por un cliente que ha alquilado al menos 10 películas en total.*/
+
+ películas que han sido alquiladas más de 5 veces en un solo día.
+ clientes que alquilaron una película en el mismo día en que se registraron como clientes.
+ películas que nunca han sido alquiladas en un mes determinado.
+ clientes que alquilaron al menos 10 películas en un mes determinado.
+ películas que han sido alquiladas por el mismo cliente más de una vez en un día determinado.
+ actores que aparecen en las películas más populares (es decir, las que se alquilaron más veces).
+ categorías de películas que han sido alquiladas más veces en un mes determinado.
+ clientes que han alquilado todas las películas de un actor determinado.
+ clientes que alquilaron una película en su fecha de cumpleaños.
+ películas que nunca han sido alquiladas por un cliente que ha alquilado al menos 10 películas en total.*/
