@@ -82,3 +82,9 @@ INNER JOIN rental r ON i.inventory_id = r.inventory_id
 GROUP BY f.film_id, r.rental_date
 HAVING COUNT(r.rental_id) >5
 ORDER BY r.rental_date;
+
+-- clientes que alquilaron una película en el mismo día en que se registraron
+SELECT c.customer_id, CONCAT(c.first_name, ' ', c.last_name) AS customer_name, r.rental_date, c.create_date
+FROM customer AS c
+JOIN rental AS r ON c.customer_id = r.customer_id
+WHERE DATE(c.create_date) = DATE(r.rental_date);
