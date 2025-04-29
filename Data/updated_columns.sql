@@ -28,7 +28,9 @@ SET r.rental_date = DATE_ADD(
 )
 WHERE c.creation_date <= '2024-12-31';
 
-select year(rental_date) as rentalYear, count(*) as totalCount from rental group by rentalYear order by rentalYear desc;
-
-update rental r
-
+-- Actualiza la fecha de entrega dada la fecha de rentado
+UPDATE rental
+SET return_date = DATE_ADD(
+	rental_Date,
+    INTERVAL FLOOR(1 + (RAND() * 30)) day
+	);
