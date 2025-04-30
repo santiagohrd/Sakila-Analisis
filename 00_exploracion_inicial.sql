@@ -36,9 +36,47 @@ FROM address
 GROUP BY address, phone
 HAVING address_count > 1;
 
+SELECT st_astext(location) FROM address;
+
+SELECT ST_X(location) AS lat, ST_Y(location) AS lon
+FROM address;
+
+SELECT COUNT(DISTINCT district) AS count_districts
+FROM address;
+
+SELECT DISTINCT district
+FROM address
+ORDER BY district;
+
+-- Category table
 DESC category;
+SELECT COUNT(name) AS category_count FROM category;
+
+SELECT DISTINCT name FROM category;
+
+SELECT name FROM category
+WHERE name IS NULL;
+
+-- City Table
 DESC city;
+SELECT COUNT(city) AS city_count
+FROM city;
+
+SELECT DISTINCT city FROM city;
+
+SELECT city FROM city
+WHERE city IS NULL;
+
+-- Country Table
 DESC country;
+SELECT COUNT(country) as country_count FROM country;
+
+SELECT DISTINCT country FROM country;
+
+SELECT country FROM country
+WHERE country IS NULL;
+
+-- Customer table
 DESC customer; -- create_date
 DESC film; -- release_year
 DESC film_actor;
