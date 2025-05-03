@@ -53,10 +53,32 @@
 - 📌 Observaciones:
   - No hay valores repetidos en columnas claves como city
  
- ---
+---
 
 ### 5. Tabla: `country`
 - 🔢 Total de registros: 109
 - 🧱 Columnas: `country_id`, `country`, `last_update`
 - 📌 Observaciones:
   - No hay valores repetidos en columnas claves como country 
+  
+---
+
+### 6. Tabla: `customer`
+- 🔢 Total de registros: 599
+- 🧱 Columnas: `customer_id`, `store_id`, `first_name`, `last_name`, `email`, `address_id`, `active`, `create_date`, `last_update`, `creation_date`
+- 📌 Observaciones:
+  - No hay valores repetidos en columnas claves como city, email
+  - No hay valores nulos en columnas claves
+  - Usuarios registrados desde el Enero/2020 a Diciembre/2025
+  - 584 clientes activos, 15 inactivos
+  
+  ---
+
+### 6. Tabla: `film`
+- 🔢 Total de registros: 1000
+- 🧱 Columnas: `film_id`, `title`, `description`, `release_year`, `language_id`, `original_language_id`, `rental_duration`, `rental_rate`, `length`, `replacement_cost`, `rating`, `special_features`, `last_update`, `released_year`
+- 📌 Observaciones:
+  - No hay valores repetidos en columnas claves
+  - No hay valores duplicados en columnas claves
+  - `rental_duration` mínimo de días de renta de una películo es 3, el máximo 7
+  - Los precios de renta van desde 0,99 a 4,99. No se observa outliers
