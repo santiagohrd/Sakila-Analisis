@@ -159,12 +159,11 @@ ORDER BY
 			WHEN 'more_4' THEN 3
 		  END;
           
-SELECT length from film;
 SELECT MIN(length) AS min_length, MAX(length) AS max_length, AVG(length), STDDEV(length)
 FROM film;
 
 SELECT 
-	CASE  length
+	CASE  
     WHEN length <= 60 THEN "<60"
     WHEN length BETWEEN 60 AND 90 THEN "60-90"
     WHEN length BETWEEN 89 AND 120 THEN "90-120"
