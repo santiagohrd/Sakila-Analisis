@@ -86,3 +86,11 @@
  
  ---
 
+### 8. Tabla: `inventory`
+- 🔢 Total de registros: 4581
+- 🧱 Columnas: `inventory_id`, `film_id`, `store_id`, `last_update`
+- 📌 Observaciones:
+  - Hay inventario en las dos tiendas
+  - La max cantidad en inventario son 8, min 2
+  - Todas las películas cuentan con inventario
+ ---
