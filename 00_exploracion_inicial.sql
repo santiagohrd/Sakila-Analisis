@@ -182,6 +182,33 @@ ORDER BY
         END;
         
 DESC inventory;
+
+SELECT COUNT(*) as qnt
+FROM inventory
+GROUP BY "qnt"
+HAVING qnt IS NOT NULL;
+
+SELECT DISTINCT(f.title),
+	CASE
+		WHEN i.store_id = 1 THEN "Main store"
+        ELSE "Sucursal" END AS Store
+FROM inventory AS i
+LEFT JOIN film as f
+ON i.film_id = f.film_id;
+
+SELECT i.store_id, COUNT(*) AS qnt
+FROM inventory AS i
+LEFT JOIN film as f
+ON i.film_id = f.film_id
+GROUP BY "qnt", i.store_id;
+
+SELECT f.title, COUNT(*) AS qnt
+FROM inventory AS i
+LEFT JOIN film as f
+ON i.film_id = f.film_id
+GROUP BY f.title
+ORDER BY qnt asc;
+
 DESC language;
 DESC payment; -- payment_date
 DESC rental; -- rental_date, return_date
