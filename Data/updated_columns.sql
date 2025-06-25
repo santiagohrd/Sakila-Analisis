@@ -28,6 +28,25 @@ SET r.rental_date = DATE_ADD(
 )
 WHERE c.creation_date <= '2024-12-31';
 
+-- Actualiza la fecha de pago para que coincida en el intervalo del rental
+UPDATE payment p
+JOIN rental r ON p.rental_id = r.rental_id
+SET p.payment_date = DATE_ADD(
+    r.rental_date,
+    INTERVAL FLOOR(1 + (RAND() * 59)) MINUTE
+);
+
+ -- Toma unos datos random para simular que pagaron antes
+UPDATE payment p
+JOIN rental r ON p.rental_id = r.rental_id
+SET p.payment_date = DATE_SUB(
+    r.rental_date,
+    INTERVAL FLOOR(1 + RAND() * 5) DAY
+)
+WHERE RAND() < 0.2;  -- 20% de los registros
+
+
+
 -- Actualiza la fecha de entrega dada la fecha de rentado
 UPDATE rental
 SET return_date = DATE_ADD(
