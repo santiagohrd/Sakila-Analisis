@@ -74,7 +74,7 @@
   
   ---
 
-### 6. Tabla: `film`
+### 7. Tabla: `film`
 - 🔢 Total de registros: 1000
 - 🧱 Columnas: `film_id`, `title`, `description`, `release_year`, `language_id`, `original_language_id`, `rental_duration`, `rental_rate`, `length`, `replacement_cost`, `rating`, `special_features`, `last_update`, `released_year`
 - 📌 Observaciones:
@@ -82,3 +82,7 @@
   - No hay valores duplicados en columnas claves
   - `rental_duration` mínimo de días de renta de una películo es 3, el máximo 7
   - Los precios de renta van desde 0,99 a 4,99. No se observa outliers
+  - Duración de las películas van desde 46 a 185 minutos
+ 
+ ---
+
