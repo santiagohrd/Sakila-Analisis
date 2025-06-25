@@ -93,4 +93,21 @@
   - Hay inventario en las dos tiendas
   - La max cantidad en inventario son 8, min 2
   - Todas las películas cuentan con inventario
+  
+ ---
+ 
+### 9. Tabla: `language`
+- 🔢 Total de registros: 6
+- 🧱 Columnas: `language_id`, `name`, `last_update`
+- 📌 Observaciones:
+  - Los idiomas guardados: English, Italian, Japanese, Mandarin, French, German
+  
+ ---
+  
+### 10. Tabla: `payment `
+- 🔢 Total de registros: 
+- 🧱 Columnas: `payment_id`,`last_update`
+- 📌 Observaciones:
+  - 
+  
  ---
