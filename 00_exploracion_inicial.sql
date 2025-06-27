@@ -254,4 +254,25 @@ JOIN rental AS r
 WHERE payment_date < rental_date;
 
 DESC rental; -- rental_date, return_date
-    
+
+SELECT * FROM rental LIMIT 5;
+
+SELECT 
+	SUM(CASE WHEN rental_date IS NULL THEN 1 ELSE 0 END) AS null_rental_id,
+    SUM(CASE WHEN inventory_id IS NULL THEN 1 ELSE 0 END) AS null_inventory_id,
+    SUM(CASE WHEN customer_id IS NULL THEN 1 ELSE 0 END) AS null_customer_id,
+    SUM(CASE WHEN return_date IS NULL THEN 1 ELSE 0 END) AS null_return_date,
+    SUM(CASE WHEN staff_id IS NULL THEN 1 ELSE 0 END) AS null_staff_id
+FROM rental;
+
+SELECT COUNT(rental_id)
+FROM rental
+WHERE return_date < rental_date;
+
+
+SELECT *
+FROM rental
+WHERE STR_TO_DATE(rental_date, '%Y-%m-%d %H:%i:%s') IS NULL
+      AND rental_date IS NOT NULL
+		OR STR_TO_DATE(return_date, '%Y-%m-%d %H:%i:%s') IS NULL
+      AND return_date IS NOT NULL;
