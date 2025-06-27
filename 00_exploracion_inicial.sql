@@ -210,5 +210,48 @@ GROUP BY f.title
 ORDER BY qnt asc;
 
 DESC language;
+SELECT COUNT(*) FROM language;
+
+SELECT name FROM language;
+
 DESC payment; -- payment_date
+SELECT * FROM payment LIMIT 5;
+
+SELECT MIN(amount), MAX(amount), COUNT(*) AS total_payments, COUNT(DISTINCT customer_id) AS unique_clients
+FROM payment;
+
+SELECT
+	SUM(CASE WHEN customer_id IS NULL THEN 1 ELSE 0 END) AS null_customer_id,
+    SUM(CASE WHEN staff_id IS NULL THEN 1 ELSE 0 END) AS null_staff_id,
+    SUM(CASE WHEN rental_id IS NULL THEN 1 ELSE 0 END) AS null_rental_id,
+    SUM(CASE WHEN amount IS NULL THEN 1 ELSE 0 END) AS null_amount,
+    SUM(CASE WHEN payment_date IS NULL THEN 1 ELSE 0 END) AS null_payment_date
+FROM payment;
+
+SELECT * FROM payment WHERE amount <= 0;
+
+SELECT amount, COUNT(*) FROM payment GROUP BY amount ORDER BY COUNT(*) DESC;
+
+
+SELECT CASE WHEN amount REGEXP '^[0-9]+$' THEN 'numero' ELSE 'No es número' END
+FROM payment;
+
+SELECT staff_id, COUNT(*) AS pagos, SUM(amount) AS total
+FROM payment
+GROUP BY staff_id;
+
+SELECT count(*) AS cantidad, datediff(payment_date, rental_date) AS time_diff
+FROM payment p
+JOIN rental r ON p.rental_id = r.rental_id
+WHERE p.payment_date < r.rental_date
+GROUP BY 2
+ORDER BY 2;
+
+SELECT COUNT(datediff(payment_date, rental_date)) AS time_diff
+FROM payment AS p
+JOIN rental AS r
+	ON p.rental_id = r.rental_id
+WHERE payment_date < rental_date;
+
 DESC rental; -- rental_date, return_date
+    
