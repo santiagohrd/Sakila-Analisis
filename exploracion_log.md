@@ -112,4 +112,14 @@
   - 24 casos donde el pago fue 0
   - 3154 casos donde el cliente pagó antes de rentar la película
   
+ ---  
+  
+### 10. Tabla: `rental`
+- 🔢 Total de registros: 16044
+- 🧱 Columnas: `rental_id`, `rental_date`, `inventory_id`, `customer_id`, `staff_id`, `return_date`, `last_update`
+- 📌 Observaciones:
+  - Sin valores nulos
+  - 24 casos donde el pago fue 0
+  - 3154 casos donde el cliente pagó antes de rentar la película
+  
  ---
