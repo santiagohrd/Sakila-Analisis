@@ -257,6 +257,7 @@ DESC rental; -- rental_date, return_date
 
 SELECT * FROM rental LIMIT 5;
 
+SELECT COUNT(*) FROM rental;
 SELECT 
 	SUM(CASE WHEN rental_date IS NULL THEN 1 ELSE 0 END) AS null_rental_id,
     SUM(CASE WHEN inventory_id IS NULL THEN 1 ELSE 0 END) AS null_inventory_id,
@@ -268,7 +269,6 @@ FROM rental;
 SELECT COUNT(rental_id)
 FROM rental
 WHERE return_date < rental_date;
-
 
 SELECT *
 FROM rental
